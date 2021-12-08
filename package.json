@@ -1,0 +1,70 @@
+{
+  "name": "@govtechsg/tradetrust-utils",
+  "version": "0.0.0-development",
+  "description": "",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/src/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && npm run build:cjs && npm run build:esm && npm run build:type",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs --project ./tsconfig.prod.json",
+    "build:esm": "tsc --module es2015 --outDir dist/esm --project ./tsconfig.prod.json",
+    "build:type": "tsc -d --emitDeclarationOnly --outDir dist/types",
+    "clean": "rm -rf dist/",
+    "commit": "git-cz",
+    "commit:retry": "npm run commit -- --retry",
+    "test:ci": "jest --runInBand",
+    "test": "NODE_OPTIONS=--max-old-space-size=2048 jest",
+    "test:watch": "jest --watch",
+    "lint": "eslint . --ext .ts --max-warnings 0",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@govtechsg/oa-verify": "^7.7.0",
+    "debug": "^4.3.3",
+    "ethers": "^5.5.2",
+    "node-cache": "^5.1.2",
+    "runtypes": "^6.5.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@commitlint/prompt": "^15.0.0",
+    "@ls-age/commitlint-circle": "1.0.0",
+    "@types/debug": "^4.1.7",
+    "@types/jest": "^27.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "commitizen": "^4.2.4",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "git-cz": "^4.8.0",
+    "jest": "^27.4.3",
+    "jest-watch-typeahead": "^1.0.0",
+    "msw": "^0.28.2",
+    "prettier": "^2.5.1",
+    "semantic-release": "^18.0.1",
+    "ts-jest": "^27.1.0",
+    "typescript": "^4.5.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TradeTrust/tradetrust-utils.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/@commitlint/prompt"
+    }
+  },
+  "prettier": {
+    "printWidth": 120
+  }
+}
