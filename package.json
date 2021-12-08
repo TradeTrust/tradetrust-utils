@@ -20,6 +20,9 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@commitlint/prompt": "^15.0.0",
     "@govtechsg/oa-verify": "^7.7.0"
   },
   "devDependencies": {
