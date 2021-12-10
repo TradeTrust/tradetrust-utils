@@ -9,7 +9,7 @@
     "build": "npm run clean && npm run build:cjs && npm run build:esm && npm run build:type",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs --project ./tsconfig.prod.json",
     "build:esm": "tsc --module es2015 --outDir dist/esm --project ./tsconfig.prod.json",
-    "build:type": "tsc -d --emitDeclarationOnly --outDir dist/types",
+    "build:type": "tsc -d --emitDeclarationOnly --outDir dist/types/src",
     "clean": "rm -rf dist/",
     "test:ci": "jest --runInBand",
     "test": "NODE_OPTIONS=--max-old-space-size=2048 jest",

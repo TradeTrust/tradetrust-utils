@@ -6,6 +6,7 @@ interface interpretFragmentsReturnTypes {
   issuedValid: boolean;
   identityValid: boolean;
 }
+
 export const interpretFragments = (fragments: VerificationFragment[]): interpretFragmentsReturnTypes => {
   const hashValid = isValid(fragments, ["DOCUMENT_INTEGRITY"]);
   const issuedValid = isValid(fragments, ["DOCUMENT_STATUS"]);
