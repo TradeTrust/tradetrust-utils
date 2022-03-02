@@ -5,6 +5,7 @@ export const TYPES = {
   IDENTITY: "IDENTITY",
   INVALID: "INVALID",
   ADDRESS_INVALID: "ADDRESS_INVALID",
+  NETWORK_INVALID: "NETWORK_INVALID",
   CONTRACT_NOT_FOUND: "CONTRACT_NOT_FOUND",
   INVALID_ARGUMENT: "INVALID_ARGUMENT",
   SERVER_ERROR: "SERVER_ERROR",
@@ -44,6 +45,11 @@ export const MESSAGES = {
     successTitle: "",
     failureMessage:
       "Please inform the issuer of this document that they have misconfigured their Document store or Token registry address.",
+  },
+  [TYPES.NETWORK_INVALID]: {
+    failureTitle: "Document's network field is invalid",
+    successTitle: "",
+    failureMessage: "This document has an invalid network field. Please contact your issuing authority for help or issue the document before trying again."
   },
   [TYPES.CONTRACT_NOT_FOUND]: {
     failureTitle: "Document store or Token registry address cannot be found",
