@@ -49,7 +49,7 @@ export const MESSAGES = {
   [TYPES.NETWORK_INVALID]: {
     failureTitle: "Document's network field is invalid",
     successTitle: "",
-    failureMessage: 
+    failureMessage:
       "This document has an invalid network field. Please contact your issuing authority for help or issue the document before trying again.",
   },
   [TYPES.CONTRACT_NOT_FOUND]: {
