@@ -1,4 +1,4 @@
-import { validatePageViewEvent, validateGaEvent, gaPageView, gaEvent } from "./Analytics";
+import { validatePageViewEvent, validateGaEvent, gaPageView, gaEvent } from "./analytics";
 
 const consoleSpy = jest.spyOn(console, "error");
 const GA_MEASUREMENT_ID = "G-123456789";
