@@ -20,9 +20,14 @@ export const validatePageViewEvent = (gaEvent: GaPageViewProps): void => {
 export const gaPageView = (gaEvent: GaPageViewProps, gaId: string): void => {
   validatePageViewEvent(gaEvent);
   const { action } = gaEvent;
-  gtag("event", action, {
-    send_to: gaId,
-  });
+
+  if (typeof gtag === "function") {
+    gtag("event", action, {
+      send_to: gaId,
+    });
+  } else {
+    console.warn("gtag is not loaded.");
+  }
 };
 
 export const validateGaEvent = (gaEvent: GaEventProps): void => {
@@ -37,9 +42,13 @@ export const gaEvent = (gaEvent: GaEventProps): void => {
   validateGaEvent(gaEvent);
   const { action, category, label, value } = gaEvent;
 
-  gtag("event", action, {
-    event_category: category,
-    event_label: label,
-    value: value,
-  });
+  if (typeof gtag === "function") {
+    gtag("event", action, {
+      event_category: category,
+      event_label: label,
+      value: value,
+    });
+  } else {
+    console.warn("gtag is not loaded.");
+  }
 };
