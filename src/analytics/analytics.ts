@@ -11,6 +11,12 @@ interface GaPageViewProps {
   action: GaActionDefault;
 }
 
+export const validateGtag = (): boolean => {
+  const isInit = typeof gtag === "function";
+  if (!isInit) console.warn("gtag is not initialised");
+  return isInit;
+};
+
 export const validatePageViewEvent = (gaEvent: GaPageViewProps): void => {
   const { action } = gaEvent;
   if (!action) console.error("Action is required");
@@ -18,8 +24,10 @@ export const validatePageViewEvent = (gaEvent: GaPageViewProps): void => {
 };
 
 export const gaPageView = (gaEvent: GaPageViewProps, gaId: string): void => {
+  if (!validateGtag()) return;
   validatePageViewEvent(gaEvent);
   const { action } = gaEvent;
+
   gtag("event", action, {
     send_to: gaId,
   });
@@ -34,6 +42,7 @@ export const validateGaEvent = (gaEvent: GaEventProps): void => {
 };
 
 export const gaEvent = (gaEvent: GaEventProps): void => {
+  if (!validateGtag()) return;
   validateGaEvent(gaEvent);
   const { action, category, label, value } = gaEvent;
 
