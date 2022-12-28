@@ -11,7 +11,7 @@ export type NETWORK_NAME = "local" | "mainnet" | "matic" | "maticmum" | "goerli"
 
 type NETWORK_TYPE = "production" | "test" | "development";
 
-type NETWORK_CURRENCY = "ETH" | "MATIC" | "SEP";
+type NETWORK_CURRENCY = "ETH" | "MATIC";
 
 export type chainInfo = {
   label: string;
@@ -57,6 +57,6 @@ export const SUPPORTED_NETWORKS: supportedNetworks = {
     label: "Sepolia",
     name: "sepolia",
     type: "test",
-    currency: "SEP",
+    currency: "ETH",
   },
 };
