@@ -1,4 +1,5 @@
 import { networkName, networkType, networkCurrency } from "./network";
+import { iconEthereum, iconPolygon } from "../static/icons";
 
 export enum CHAIN_ID {
   local = "1337",
@@ -15,6 +16,7 @@ export type chainInfo = {
   name: networkName;
   type: networkType;
   currency: networkCurrency;
+  iconImage: string;
   explorerUrl: string;
   explorerApiUrl?: string;
   rpcUrl?: string;
@@ -34,6 +36,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     name: "local",
     type: "development",
     currency: "ETH",
+    iconImage: iconEthereum,
     explorerUrl: "https://localhost/explorer",
   },
   [CHAIN_ID.mainnet]: {
@@ -42,6 +45,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     name: "mainnet",
     type: "production",
     currency: "ETH",
+    iconImage: iconEthereum,
     explorerUrl: "https://etherscan.io",
     explorerApiUrl: "https://api.etherscan.io",
   },
@@ -51,6 +55,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     name: "matic",
     type: "production",
     currency: "MATIC",
+    iconImage: iconPolygon,
     explorerUrl: "https://polygonscan.com",
     rpcUrl: "https://polygon-rpc.com",
     nativeCurrency: {
@@ -65,6 +70,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     name: "maticmum",
     type: "test",
     currency: "MATIC",
+    iconImage: iconPolygon,
     explorerUrl: "https://mumbai.polygonscan.com",
     explorerApiUrl: "https://api-testnet.polygonscan.com",
     rpcUrl: "https://rpc-mumbai.matic.today",
@@ -80,6 +86,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     name: "goerli",
     type: "test",
     currency: "ETH",
+    iconImage: iconEthereum,
     explorerUrl: "https://goerli.etherscan.io",
     explorerApiUrl: "https://api-goerli.etherscan.io",
   },
@@ -89,6 +96,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     name: "sepolia",
     type: "test",
     currency: "ETH",
+    iconImage: iconEthereum,
     explorerUrl: "https://sepolia.etherscan.io",
     rpcUrl: "https://rpc.sepolia.org",
     nativeCurrency: {
