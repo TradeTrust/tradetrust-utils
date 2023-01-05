@@ -38,6 +38,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     currency: "ETH",
     iconImage: iconEthereum,
     explorerUrl: "https://localhost/explorer",
+    rpcUrl: "http://localhost:8545",
   },
   [CHAIN_ID.mainnet]: {
     id: CHAIN_ID.mainnet,
