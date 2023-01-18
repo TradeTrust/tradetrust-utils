@@ -16,7 +16,7 @@ export const interpretFragments = (fragments: VerificationFragment[]): interpret
 
 export const errorMessageHandling = (fragments: VerificationFragment[]): string[] => {
   const { hashValid, issuedValid, identityValid } = interpretFragments(fragments);
-  const errors = [];
+  let errors = [];
 
   if (utils.isDocumentStoreAddressOrTokenRegistryAddressInvalid(fragments)) {
     // if the error is because the address is invalid, only return this one
@@ -30,21 +30,24 @@ export const errorMessageHandling = (fragments: VerificationFragment[]): string[
     // if the error is because cannot connect to Ethereum, only return this one
     return [TYPES.SERVER_ERROR];
   }
-
+  if (!issuedValid && !hashValid && !identityValid) {
+    // this error is caused when the document is invalid, only keep this one
+    return [TYPES.INVALID];
+  }
+  
   if (!hashValid) errors.push(TYPES.HASH);
   if (!identityValid) errors.push(TYPES.IDENTITY);
   if (!issuedValid) {
-    if (utils.certificateRevoked(fragments)) errors.push(TYPES.REVOKED);
-    else if (utils.invalidArgument(fragments)) {
+    if (utils.certificateRevoked(fragments)) {
+      errors.push(TYPES.REVOKED);
+    } else if (utils.invalidArgument(fragments)) {
       // this error is caused when the merkle root is wrong, and should always be shown with the DOCUMENT_INTEGRITY error
       errors.push(TYPES.INVALID_ARGUMENT);
-    } else if (utils.certificateNotIssued(fragments)) errors.push(TYPES.ISSUED);
-    else if (!hashValid && !identityValid) {
-      // this error is caused when the document is invalid, only keep this one
-      return [TYPES.INVALID];
+    } else if (utils.certificateNotIssued(fragments)) {
+      errors.push(TYPES.ISSUED);
     } else {
       // if it's some unhandled error that we didn't foresee, only keep this one
-      return [TYPES.ETHERS_UNHANDLED_ERROR];
+      errors.push(TYPES.ETHERS_UNHANDLED_ERROR);
     }
   }
 

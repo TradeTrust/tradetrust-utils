@@ -85,9 +85,7 @@ describe("interpretFragments", () => {
 describe("errorMessageHandling", () => {
   it("should return all errors when fragments have multiple errors", () => {
     expect(errorMessageHandling(whenDocumentHashInvalidAndNotIssued as VerificationFragment[])).toStrictEqual([
-      "HASH",
-      "IDENTITY",
-      "ISSUED",
+      "INVALID"
     ]);
   });
 
