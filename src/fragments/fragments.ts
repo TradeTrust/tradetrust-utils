@@ -16,7 +16,7 @@ export const interpretFragments = (fragments: VerificationFragment[]): interpret
 
 export const errorMessageHandling = (fragments: VerificationFragment[]): string[] => {
   const { hashValid, issuedValid, identityValid } = interpretFragments(fragments);
-  let errors = [];
+  const errors = [];
 
   if (utils.isDocumentStoreAddressOrTokenRegistryAddressInvalid(fragments)) {
     // if the error is because the address is invalid, only return this one
@@ -34,7 +34,7 @@ export const errorMessageHandling = (fragments: VerificationFragment[]): string[
     // this error is caused when the document is invalid, only keep this one
     return [TYPES.INVALID];
   }
-  
+
   if (!hashValid) errors.push(TYPES.HASH);
   if (!identityValid) errors.push(TYPES.IDENTITY);
   if (!issuedValid) {
