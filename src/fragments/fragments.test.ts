@@ -6,7 +6,8 @@ import {
   whenDocumentValidAndIssuedByDns,
   whenDocumentValidAndIssuedByDid,
   whenDocumentHashInvalid,
-  whenDocumentRevoked,
+  whenDocumentIssuedAndRevokedByEthereumDocStore,
+  whenDocumentRevokedAndIdentifiedByDNSDID,
   whenDocumentIssuerIdentityInvalidDnsTxt,
   whenDocumentIssuerIdentityInvalidDid,
   whenTransferableDocumentVerified,
@@ -52,8 +53,15 @@ describe("interpretFragments", () => {
       identityValid: true,
     });
   });
-  it("should interpret whenDocumentRevoked correctly", () => {
-    expect(interpretFragments(whenDocumentRevoked as VerificationFragment[])).toEqual({
+  it("should interpret whenDocumentIssuedAndRevokedByEthereumDocStore correctly", () => {
+    expect(interpretFragments(whenDocumentIssuedAndRevokedByEthereumDocStore as VerificationFragment[])).toEqual({
+      hashValid: true,
+      issuedValid: false,
+      identityValid: true,
+    });
+  });
+  it("should interpret whenDocumentRevokedAndIdentifiedByDNSDID correctly", () => {
+    expect(interpretFragments(whenDocumentRevokedAndIdentifiedByDNSDID as VerificationFragment[])).toEqual({
       hashValid: true,
       issuedValid: false,
       identityValid: true,
@@ -101,8 +109,15 @@ describe("errorMessageHandling", () => {
     ]);
   });
 
-  it("should return revoked error when fragments indicate revoked", () => {
-    expect(errorMessageHandling(whenDocumentRevoked as VerificationFragment[])).toStrictEqual(["REVOKED"]);
+  it("should return revoked error when fragments indicate revoked (issued and revoked with ethereum doc store)", () => {
+    expect(
+      errorMessageHandling(whenDocumentIssuedAndRevokedByEthereumDocStore as VerificationFragment[])
+    ).toStrictEqual(["REVOKED"]);
+  });
+  it("should return revoked error when fragments indicate revoked (identified by DNS-DID but revoked with ethereum doc store)", () => {
+    expect(errorMessageHandling(whenDocumentRevokedAndIdentifiedByDNSDID as VerificationFragment[])).toStrictEqual([
+      "REVOKED",
+    ]);
   });
 
   it("should return invalid address error when fragments contain invalid address", () => {
