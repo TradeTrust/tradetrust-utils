@@ -288,7 +288,93 @@ export const whenDocumentHashInvalid = [
   },
 ];
 
-export const whenDocumentRevoked = [
+export const whenDocumentRevokedAndIdentifiedByDnsDid = [
+  {
+    type: "DOCUMENT_INTEGRITY",
+    name: "OpenAttestationHash",
+    data: true,
+    status: "VALID",
+  },
+  {
+    status: "SKIPPED",
+    type: "DOCUMENT_STATUS",
+    name: "OpenAttestationEthereumTokenRegistryStatus",
+    reason: {
+      code: 4,
+      codeString: "SKIPPED",
+      message: 'Document issuers doesn\'t have "tokenRegistry" property or TOKEN_REGISTRY method',
+    },
+  },
+  {
+    status: "SKIPPED",
+    type: "DOCUMENT_STATUS",
+    name: "OpenAttestationEthereumDocumentStoreStatus",
+    reason: {
+      code: 4,
+      codeString: "SKIPPED",
+      message: 'Document issuers doesn\'t have "documentStore" or "certificateStore" property or DOCUMENT_STORE method',
+    },
+  },
+  {
+    name: "OpenAttestationDidSignedDocumentStatus",
+    type: "DOCUMENT_STATUS",
+    data: {
+      issuedOnAll: true,
+      revokedOnAny: true,
+      details: {
+        issuance: [
+          {
+            issued: true,
+            did: "did:ethr:0x1245e5B64D785b25057f7438F715f4aA5D965733",
+          },
+        ],
+        revocation: [
+          {
+            revoked: true,
+            address: "0x49b2969bF0E4aa822023a9eA2293b24E4518C1DD",
+            reason: {
+              message:
+                "Document 0x3752f29527952e7ccc6bf4da614d80f2fec9e5bd8b71adf10beb4e6763e6c233 has been revoked under contract 0x49b2969bF0E4aa822023a9eA2293b24E4518C1DD",
+              code: 5,
+              codeString: "DOCUMENT_REVOKED",
+            },
+          },
+        ],
+      },
+    },
+    status: "INVALID",
+    reason: {
+      message:
+        "Document 0x3752f29527952e7ccc6bf4da614d80f2fec9e5bd8b71adf10beb4e6763e6c233 has been revoked under contract 0x49b2969bF0E4aa822023a9eA2293b24E4518C1DD",
+      code: 5,
+      codeString: "DOCUMENT_REVOKED",
+    },
+  },
+  {
+    status: "SKIPPED",
+    type: "ISSUER_IDENTITY",
+    name: "OpenAttestationDnsTxtIdentityProof",
+    reason: {
+      code: 2,
+      codeString: "SKIPPED",
+      message: 'Document issuers doesn\'t have "documentStore" / "tokenRegistry" property or doesn\'t use DNS-TXT type',
+    },
+  },
+  {
+    name: "OpenAttestationDnsDidIdentityProof",
+    type: "ISSUER_IDENTITY",
+    data: [
+      {
+        location: "demo-tradetrust.openattestation.com",
+        key: "did:ethr:0x1245e5B64D785b25057f7438F715f4aA5D965733#controller",
+        status: "VALID",
+      },
+    ],
+    status: "VALID",
+  },
+];
+
+export const whenDocumentIssuedAndRevokedByEthereumDocStore = [
   {
     type: "DOCUMENT_INTEGRITY",
     name: "OpenAttestationHash",

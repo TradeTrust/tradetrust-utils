@@ -1,4 +1,9 @@
-import { isValid, VerificationFragment, utils } from "@govtechsg/oa-verify";
+import {
+  isValid,
+  VerificationFragment,
+  utils,
+  OpenAttestationEthereumDocumentStoreStatusCode,
+} from "@govtechsg/oa-verify";
 import { TYPES } from "../constants/VerificationErrorMessages";
 
 interface interpretFragmentsReturnTypes {
@@ -6,6 +11,18 @@ interface interpretFragmentsReturnTypes {
   issuedValid: boolean;
   identityValid: boolean;
 }
+
+/** trying to make interpretation of the fragments for DIDSignedDocStoreRevokedDocuments
+ * currently certificateRevoked function from oa-verify does not handle it. (only checks the status codes for ethereumDocStoreVerifier)
+ * if we were to be thorough about making this change, would be better to include a new status code for  OpenAttestationDIDDocumentStoreStatusCode and expose a status code getter for it.
+ * but the surface impact is huge, so opt to do it at the project level instead.
+ */
+const certificateRevokedOnDidIdentified = (fragments: VerificationFragment[]) => {
+  const didSignedDocumentStatusFragment = utils.getOpenAttestationDidSignedDocumentStatusFragment(fragments);
+  return (
+    didSignedDocumentStatusFragment?.reason?.code === OpenAttestationEthereumDocumentStoreStatusCode.DOCUMENT_REVOKED
+  );
+};
 
 export const interpretFragments = (fragments: VerificationFragment[]): interpretFragmentsReturnTypes => {
   const hashValid = isValid(fragments, ["DOCUMENT_INTEGRITY"]);
@@ -34,7 +51,7 @@ export const errorMessageHandling = (fragments: VerificationFragment[]): string[
   if (!hashValid) errors.push(TYPES.HASH);
   if (!identityValid) errors.push(TYPES.IDENTITY);
   if (!issuedValid) {
-    if (utils.certificateRevoked(fragments)) errors.push(TYPES.REVOKED);
+    if (utils.certificateRevoked(fragments) || certificateRevokedOnDidIdentified(fragments)) errors.push(TYPES.REVOKED);
     else if (utils.invalidArgument(fragments)) {
       // this error is caused when the merkle root is wrong, and should always be shown with the DOCUMENT_INTEGRITY error
       errors.push(TYPES.INVALID_ARGUMENT);
