@@ -7,7 +7,7 @@ import {
   whenDocumentValidAndIssuedByDid,
   whenDocumentHashInvalid,
   whenDocumentIssuedAndRevokedByEthereumDocStore,
-  whenDocumentRevokedAndIdentifiedByDNSDID,
+  whenDocumentRevokedAndIdentifiedByDnsDid,
   whenDocumentIssuerIdentityInvalidDnsTxt,
   whenDocumentIssuerIdentityInvalidDid,
   whenTransferableDocumentVerified,
@@ -60,8 +60,8 @@ describe("interpretFragments", () => {
       identityValid: true,
     });
   });
-  it("should interpret whenDocumentRevokedAndIdentifiedByDNSDID correctly", () => {
-    expect(interpretFragments(whenDocumentRevokedAndIdentifiedByDNSDID as VerificationFragment[])).toEqual({
+  it("should interpret whenDocumentRevokedAndIdentifiedByDnsDid correctly", () => {
+    expect(interpretFragments(whenDocumentRevokedAndIdentifiedByDnsDid as VerificationFragment[])).toEqual({
       hashValid: true,
       issuedValid: false,
       identityValid: true,
@@ -115,7 +115,7 @@ describe("errorMessageHandling", () => {
     ).toStrictEqual(["REVOKED"]);
   });
   it("should return revoked error when fragments indicate revoked (identified by DNS-DID but revoked with ethereum doc store)", () => {
-    expect(errorMessageHandling(whenDocumentRevokedAndIdentifiedByDNSDID as VerificationFragment[])).toStrictEqual([
+    expect(errorMessageHandling(whenDocumentRevokedAndIdentifiedByDnsDid as VerificationFragment[])).toStrictEqual([
       "REVOKED",
     ]);
   });

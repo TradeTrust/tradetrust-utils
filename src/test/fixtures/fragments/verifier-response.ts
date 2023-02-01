@@ -288,7 +288,7 @@ export const whenDocumentHashInvalid = [
   },
 ];
 
-export const whenDocumentRevokedAndIdentifiedByDNSDID = [
+export const whenDocumentRevokedAndIdentifiedByDnsDid = [
   {
     type: "DOCUMENT_INTEGRITY",
     name: "OpenAttestationHash",
