@@ -24,7 +24,7 @@ afterEach(() => {
 describe("validateGtag", () => {
   it("warns if gtag is not initialised", () => {
     validateGtag();
-    expect(consoleWarn).toBeCalledTimes(1);
+    expect(consoleWarn).toHaveBeenCalledTimes(1);
     expect(consoleWarn).toHaveBeenCalledWith("gtag is not initialised");
   });
 });
@@ -33,7 +33,7 @@ describe("validateGaPageView", () => {
   it("errors if action is missing", () => {
     // @ts-expect-error we expect this error to be thrown
     validatePageViewEvent({});
-    expect(consoleError).toBeCalledTimes(1);
+    expect(consoleError).toHaveBeenCalledTimes(1);
     expect(consoleError).toHaveBeenCalledWith("Action is required");
   });
 });
@@ -55,7 +55,7 @@ describe("gaPageView", () => {
       } as any,
       GA_MEASUREMENT_ID
     );
-    expect(window.gtag).toBeCalledTimes(1);
+    expect(window.gtag).toHaveBeenCalledTimes(1);
     expect(window.gtag).toHaveBeenCalledWith("event", "TEST_ACTION", {
       send_to: GA_MEASUREMENT_ID,
     });
@@ -65,7 +65,7 @@ describe("gaPageView", () => {
     const mockGaEventError = { action: 123 };
     // @ts-expect-error the mock does not match the signature
     gaPageView(mockGaEventError);
-    expect(consoleError).toBeCalledTimes(1);
+    expect(consoleError).toHaveBeenCalledTimes(1);
     expect(consoleError).toHaveBeenCalledWith("Action must be a string");
   });
 });
@@ -76,7 +76,7 @@ describe("validateGaEvent", () => {
     validateGaEvent({
       action: "foobar_start",
     });
-    expect(consoleError).toBeCalledTimes(1);
+    expect(consoleError).toHaveBeenCalledTimes(1);
     expect(consoleError).toHaveBeenCalledWith("Category is required");
   });
 
@@ -85,14 +85,14 @@ describe("validateGaEvent", () => {
     validateGaEvent({
       category: "foobar",
     });
-    expect(consoleError).toBeCalledTimes(1);
+    expect(consoleError).toHaveBeenCalledTimes(1);
     expect(consoleError).toHaveBeenCalledWith("Action is required");
   });
 
   it("errors if value is not number", () => {
     // @ts-expect-error we expect this error to be thrown
     validateGaEvent({ category: "foobar", action: "foobar_start", value: "STRING" });
-    expect(consoleError).toBeCalledTimes(1);
+    expect(consoleError).toHaveBeenCalledTimes(1);
     expect(consoleError).toHaveBeenCalledWith("Value must be a number");
   });
 
@@ -134,7 +134,7 @@ describe("gaEvent", () => {
 
   it("sends and log gtag event if window.gtag is present", () => {
     gaEvent(mockGaEvent);
-    expect(window.gtag).toBeCalledTimes(1);
+    expect(window.gtag).toHaveBeenCalledTimes(1);
     expect(window.gtag).toHaveBeenCalledWith("event", "TEST_ACTION", {
       event_category: "TEST_CATEGORY",
       event_label: "TEST_LABEL",
@@ -146,7 +146,7 @@ describe("gaEvent", () => {
     const mockGaEventError = { ...mockGaEvent, value: "STRING" };
     // @ts-expect-error the mock does not match the signature
     gaEvent(mockGaEventError);
-    expect(consoleError).toBeCalledTimes(1);
+    expect(consoleError).toHaveBeenCalledTimes(1);
     expect(consoleError).toHaveBeenCalledWith("Value must be a number");
   });
 });
