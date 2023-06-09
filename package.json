@@ -80,8 +80,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/TradeTrust/tradetrust-utils.git"
-  },
-  "prettier": {
-    "printWidth": 120
   }
 }
