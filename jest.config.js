@@ -3,9 +3,11 @@ module.exports = {
   testEnvironment: "jest-environment-jsdom",
   watchPlugins: ["jest-watch-typeahead/filename", "jest-watch-typeahead/testname"],
   testTimeout: 30000,
-  transformIgnorePatterns: ["node_modules/(?!swiper|@govtechsg|uuid).*/"],
+  moduleNameMapper: {
+    // Force module uuid to resolve with the CJS entry point, because Jest does not support package.json.exports. See https://github.com/uuidjs/uuid/issues/451
+    "uuid": require.resolve('uuid'),
+  },
   transform: {
     "^.+\\.ts?$": "ts-jest",
-    "^.+\\.(js|jsx)$": "babel-jest",
   },
 };
