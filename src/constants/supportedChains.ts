@@ -1,5 +1,5 @@
 import { networkName, networkType, networkCurrency } from "./network";
-import { iconEthereum, iconPolygon , iconXDC } from "../static/icons";
+import { iconEthereum, iconPolygon, iconXDC } from "../static/icons";
 
 export enum CHAIN_ID {
   local = "1337",
@@ -8,8 +8,8 @@ export enum CHAIN_ID {
   maticmum = "80001",
   goerli = "5",
   sepolia = "11155111",
-  xdc= "50",
-  xdcapothem= "51",
+  xdc = "50",
+  xdcapothem = "51",
 }
 
 export type chainInfo = {
