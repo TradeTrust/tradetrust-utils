@@ -60,4 +60,22 @@ describe("supportedChains", () => {
     expect(currency).toBe("ETH");
     expect(explorerUrl).toBe("https://sepolia.etherscan.io");
   });
+  it("should xdcnetwork chain info correctly", () => {
+    const { id, name, type, currency, explorerUrl } = SUPPORTED_CHAINS[CHAIN_ID.xdc];
+
+    expect(id).toBe(CHAIN_ID.xdcapothem);
+    expect(name).toBe("xdc");
+    expect(type).toBe("production");
+    expect(currency).toBe("XDC");
+    expect(explorerUrl).toBe("https://xdcscan.io");
+  });
+  it("should xdcapothem chain info correctly", () => {
+    const { id, name, type, currency, explorerUrl } = SUPPORTED_CHAINS[CHAIN_ID.xdcapothem];
+
+    expect(id).toBe(CHAIN_ID.xdcapothem);
+    expect(name).toBe("xdcapothem");
+    expect(type).toBe("test");
+    expect(currency).toBe("XDC");
+    expect(explorerUrl).toBe("https://apothem.xdcscan.io");
+  });
 });
