@@ -63,7 +63,7 @@ describe("supportedChains", () => {
   it("should xdcnetwork chain info correctly", () => {
     const { id, name, type, currency, explorerUrl } = SUPPORTED_CHAINS[CHAIN_ID.xdc];
 
-    expect(id).toBe(CHAIN_ID.xdcapothem);
+    expect(id).toBe(CHAIN_ID.xdc);
     expect(name).toBe("xdc");
     expect(type).toBe("production");
     expect(currency).toBe("XDC");
