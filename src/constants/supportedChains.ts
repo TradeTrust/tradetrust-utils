@@ -1,5 +1,5 @@
 import { networkName, networkType, networkCurrency } from "./network";
-import { iconEthereum, iconPolygon } from "../static/icons";
+import { iconEthereum, iconPolygon, iconXDC } from "../static/icons";
 
 export enum CHAIN_ID {
   local = "1337",
@@ -8,6 +8,8 @@ export enum CHAIN_ID {
   maticmum = "80001",
   goerli = "5",
   sepolia = "11155111",
+  xdc = "50",
+  xdcapothem = "51",
 }
 
 export type chainInfo = {
@@ -103,6 +105,36 @@ export const SUPPORTED_CHAINS: supportedChains = {
     nativeCurrency: {
       name: "ETH",
       symbol: "sepETH",
+      decimals: 18,
+    },
+  },
+  [CHAIN_ID.xdc]: {
+    id: CHAIN_ID.xdc,
+    label: "XDC Network",
+    name: "xdc",
+    type: "production",
+    currency: "XDC",
+    iconImage: iconXDC,
+    explorerUrl: "https://xdcscan.io",
+    rpcUrl: "https://erpc.xinfin.network",
+    nativeCurrency: {
+      name: "XDC",
+      symbol: "XDC",
+      decimals: 18,
+    },
+  },
+  [CHAIN_ID.xdcapothem]: {
+    id: CHAIN_ID.xdcapothem,
+    label: "Apothem Network",
+    name: "xdcapothem",
+    type: "test",
+    currency: "XDC",
+    iconImage: iconXDC,
+    explorerUrl: "https://apothem.xdcscan.io",
+    rpcUrl: "https://erpc.apothem.network",
+    nativeCurrency: {
+      name: "XDC",
+      symbol: "XDC",
       decimals: 18,
     },
   },

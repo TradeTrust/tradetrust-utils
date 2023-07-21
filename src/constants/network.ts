@@ -1,7 +1,7 @@
-export const networks = ["local", "mainnet", "matic", "maticmum", "goerli", "sepolia"] as const;
+export const networks = ["local", "mainnet", "matic", "maticmum", "goerli", "sepolia", "xdc", "xdcapothem"] as const;
 
 export type networkName = (typeof networks)[number];
 
 export type networkType = "production" | "test" | "development";
 
-export type networkCurrency = "ETH" | "MATIC";
+export type networkCurrency = "ETH" | "MATIC" | "XDC";
