@@ -41,16 +41,6 @@ describe("supportedChains", () => {
     expect(explorerUrl).toBe("https://mumbai.polygonscan.com");
   });
 
-  it("should goerli chain info correctly", () => {
-    const { id, name, type, currency, explorerUrl } = SUPPORTED_CHAINS[CHAIN_ID.goerli];
-
-    expect(id).toBe(CHAIN_ID.goerli);
-    expect(name).toBe("goerli");
-    expect(type).toBe("test");
-    expect(currency).toBe("ETH");
-    expect(explorerUrl).toBe("https://goerli.etherscan.io");
-  });
-
   it("should sepolia chain info correctly", () => {
     const { id, name, type, currency, explorerUrl } = SUPPORTED_CHAINS[CHAIN_ID.sepolia];
 
