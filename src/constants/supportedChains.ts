@@ -1,5 +1,5 @@
 import { networkName, networkType, networkCurrency } from "./network";
-import { iconEthereum, iconPolygon, iconXDC } from "../static/icons";
+import { iconEthereum, iconHedera, iconPolygon, iconXDC } from "../static/icons";
 
 export enum CHAIN_ID {
   local = "1337",
@@ -9,6 +9,8 @@ export enum CHAIN_ID {
   sepolia = "11155111",
   xdc = "50",
   xdcapothem = "51",
+  hederatestnet ="296",
+  hederamainnet ="295"
 }
 
 export type chainInfo = {
@@ -124,6 +126,36 @@ export const SUPPORTED_CHAINS: supportedChains = {
     nativeCurrency: {
       name: "XDC",
       symbol: "XDC",
+      decimals: 18,
+    },
+  },
+  [CHAIN_ID.hederatestnet]: {
+    id: CHAIN_ID.hederatestnet,
+    label: "Hedera Testnet Network",
+    name: "hederatestnet",
+    type: "test",
+    currency: "HBAR",
+    iconImage: iconHedera,
+    explorerUrl: "https://hashscan.io/testnet",
+    rpcUrl: "https://testnet.hashio.io/api",
+    nativeCurrency: {
+      name: "HBAR",
+      symbol: "HBAR",
+      decimals: 18,
+    },
+  },
+  [CHAIN_ID.hederamainnet]: {
+    id: CHAIN_ID.hederamainnet,
+    label: "Hedera MainNet Network",
+    name: "hederamainnet",
+    type: "production",
+    currency: "HBAR",
+    iconImage: iconHedera,
+    explorerUrl: "https://hashscan.io/mainnet",
+    rpcUrl: "https://mainnet.hashio.io/api",
+    nativeCurrency: {
+      name: "HBAR",
+      symbol: "HBAR",
       decimals: 18,
     },
   },

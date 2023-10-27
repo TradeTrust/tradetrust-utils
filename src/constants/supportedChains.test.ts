@@ -68,4 +68,13 @@ describe("supportedChains", () => {
     expect(currency).toBe("XDC");
     expect(explorerUrl).toBe("https://apothem.xdcscan.io");
   });
+  it("should hederatestnet chain info correctly", () => {
+    const { id, name, type, currency, explorerUrl } = SUPPORTED_CHAINS[CHAIN_ID.hederatestnet];
+
+    expect(id).toBe(CHAIN_ID.hederatestnet);
+    expect(name).toBe("hederatestnet");
+    expect(type).toBe("test");
+    expect(currency).toBe("HBAR");
+    expect(explorerUrl).toBe("https://hashscan.io/testnet");
+  });
 });
