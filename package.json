@@ -45,7 +45,7 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "@govtechsg/oa-verify": "^8.1.0"
+    "@tradetrust-tt/tt-verify": "^8.4.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.5",
