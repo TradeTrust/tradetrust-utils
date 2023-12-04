@@ -13,5 +13,5 @@ Before any commits here, please ask the maintainers (TradeTrust team) first.
 If the consuming application does not support treeshaking, you should do direct import instead. Example:
 
 ```
-import { CHAIN_ID } from "@govtechsg/tradetrust-utils/constants/supportedChains";
+import { CHAIN_ID } from "@tradetrust-tt/tradetrust-utils/constants/supportedChains";
 ```
