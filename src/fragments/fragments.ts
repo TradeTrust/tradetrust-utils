@@ -3,7 +3,7 @@ import {
   VerificationFragment,
   utils,
   OpenAttestationEthereumDocumentStoreStatusCode,
-} from "@govtechsg/oa-verify";
+} from "@tradetrust-tt/tt-verify";
 import { TYPES } from "../constants/VerificationErrorMessages";
 
 interface interpretFragmentsReturnTypes {

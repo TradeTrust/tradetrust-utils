@@ -1,4 +1,4 @@
-import { VerificationFragment } from "@govtechsg/oa-verify";
+import { VerificationFragment } from "@tradetrust-tt/tt-verify";
 import { interpretFragments, errorMessageHandling } from "./fragments";
 import {
   whenDocumentHashInvalidAndNotIssued,
