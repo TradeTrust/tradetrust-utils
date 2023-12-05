@@ -1,5 +1,5 @@
 {
-  "name": "@govtechsg/tradetrust-utils",
+  "name": "@tradetrust-tt/tradetrust-utils",
   "version": "0.1.0",
   "description": "",
   "types": "./dist/types/index.d.ts",
