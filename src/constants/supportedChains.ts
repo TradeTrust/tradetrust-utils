@@ -9,8 +9,8 @@ export enum CHAIN_ID {
   sepolia = "11155111",
   xdc = "50",
   xdcapothem = "51",
-  hederatestnet ="296",
-  hederamainnet ="295"
+  hederatestnet = "296",
+  hederamainnet = "295",
 }
 
 export type chainInfo = {
