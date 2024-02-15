@@ -77,4 +77,13 @@ describe("supportedChains", () => {
     expect(currency).toBe("HBAR");
     expect(explorerUrl).toBe("https://hashscan.io/testnet");
   });
+  it("should stabilitytestnet chain info correctly", () => {
+    const { id, name, type, currency, explorerUrl } = SUPPORTED_CHAINS[CHAIN_ID.stabilitytestnet];
+
+    expect(id).toBe(CHAIN_ID.stabilitytestnet);
+    expect(name).toBe("stabilitytestnet");
+    expect(type).toBe("test");
+    expect(currency).toBe("FREE");
+    expect(explorerUrl).toBe("https://stability-testnet.blockscout.com/");
+  });
 });
