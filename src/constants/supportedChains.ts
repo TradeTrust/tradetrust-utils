@@ -168,7 +168,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     currency: "FREE",
     iconImage: iconStability,
     explorerUrl: "https://stability-testnet.blockscout.com/",
-    rpcUrl: "https://free.testnet.stabilityprotoocol.com",
+    rpcUrl: "https://free.testnet.stabilityprotocol.com",
     nativeCurrency: {
       name: "FREE",
       symbol: "FREE",
