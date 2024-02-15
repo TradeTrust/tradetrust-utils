@@ -53,7 +53,7 @@ describe("gaPageView", () => {
       {
         action: "TEST_ACTION",
       } as any,
-      GA_MEASUREMENT_ID
+      GA_MEASUREMENT_ID,
     );
     expect(window.gtag).toHaveBeenCalledTimes(1);
     expect(window.gtag).toHaveBeenCalledWith("event", "TEST_ACTION", {
