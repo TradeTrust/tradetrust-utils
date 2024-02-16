@@ -11,7 +11,7 @@ export enum CHAIN_ID {
   xdcapothem = "51",
   hederatestnet = "296",
   hederamainnet = "295",
-  stabilitytestnet = "20180427"
+  stabilitytestnet = "20180427",
 }
 
 export type chainInfo = {
