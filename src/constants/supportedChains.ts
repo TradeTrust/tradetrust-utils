@@ -1,5 +1,5 @@
 import { networkName, networkType, networkCurrency } from "./network";
-import { iconEthereum, iconHedera, iconPolygon, iconXDC } from "../static/icons";
+import { iconEthereum, iconHedera, iconPolygon, iconStability, iconXDC } from "../static/icons";
 
 export enum CHAIN_ID {
   local = "1337",
@@ -11,6 +11,7 @@ export enum CHAIN_ID {
   xdcapothem = "51",
   hederatestnet = "296",
   hederamainnet = "295",
+  stabilitytestnet = "20180427",
 }
 
 export type chainInfo = {
@@ -156,6 +157,21 @@ export const SUPPORTED_CHAINS: supportedChains = {
     nativeCurrency: {
       name: "HBAR",
       symbol: "HBAR",
+      decimals: 18,
+    },
+  },
+  [CHAIN_ID.stabilitytestnet]: {
+    id: CHAIN_ID.stabilitytestnet,
+    label: "Stability Testnet Network",
+    name: "stabilitytestnet",
+    type: "test",
+    currency: "FREE",
+    iconImage: iconStability,
+    explorerUrl: "https://stability-testnet.blockscout.com/",
+    rpcUrl: "https://free.testnet.stabilityprotocol.com",
+    nativeCurrency: {
+      name: "FREE",
+      symbol: "FREE",
       decimals: 18,
     },
   },
