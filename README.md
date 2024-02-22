@@ -8,6 +8,11 @@ We will monitor whether the dependencies will get out of hand.
 
 Before any commits here, please ask the maintainers (TradeTrust team) first.
 
+### Prerequisite
+
+- Node (optionally, use [nvm](https://github.com/nvm-sh/nvm) to manage node version)
+- Node version 18 onwards.
+
 ### Direct import
 
 If the consuming application does not support treeshaking, you should do direct import instead. Example:

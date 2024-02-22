@@ -111,7 +111,7 @@ describe("errorMessageHandling", () => {
 
   it("should return revoked error when fragments indicate revoked (issued and revoked with ethereum doc store)", () => {
     expect(
-      errorMessageHandling(whenDocumentIssuedAndRevokedByEthereumDocStore as VerificationFragment[])
+      errorMessageHandling(whenDocumentIssuedAndRevokedByEthereumDocStore as VerificationFragment[]),
     ).toStrictEqual(["REVOKED"]);
   });
   it("should return revoked error when fragments indicate revoked (identified by DNS-DID but revoked with ethereum doc store)", () => {
