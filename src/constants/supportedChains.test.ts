@@ -49,7 +49,7 @@ describe("supportedChains", () => {
     expect(type).toBe("test");
     expect(currency).toBe("MATIC");
     expect(explorerUrl).toBe("https://www.oklink.com/amoy");
-    expect(rpcUrl).toBe("https://rpc-amoy.polygon.technology/");
+    expect(rpcUrl).toContain("https://polygon-amoy.infura.io/v3/");
   });
 
   it("should sepolia chain info correctly", () => {
