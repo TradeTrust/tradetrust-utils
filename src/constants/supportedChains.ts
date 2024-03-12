@@ -14,6 +14,7 @@ export enum CHAIN_ID {
   hederatestnet = "296",
   hederamainnet = "295",
   stabilitytestnet = "20180427",
+  stability = "101010",
 }
 
 export type chainInfo = {
@@ -186,6 +187,21 @@ export const SUPPORTED_CHAINS: supportedChains = {
     iconImage: iconStability,
     explorerUrl: "https://stability-testnet.blockscout.com/",
     rpcUrl: "https://free.testnet.stabilityprotocol.com",
+    nativeCurrency: {
+      name: "FREE",
+      symbol: "FREE",
+      decimals: 18,
+    },
+  },
+  [CHAIN_ID.stability]: {
+    id: CHAIN_ID.stability,
+    label: "Stability Network",
+    name: "stability",
+    type: "production",
+    currency: "FREE",
+    iconImage: iconStability,
+    explorerUrl: "https://stability.blockscout.com/",
+    rpcUrl: `https://gtn.stabilityprotocol.com/?api_key=${process.env.STABILITY_API_KEY}`,
     nativeCurrency: {
       name: "FREE",
       symbol: "FREE",

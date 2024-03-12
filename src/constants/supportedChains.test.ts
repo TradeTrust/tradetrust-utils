@@ -97,4 +97,13 @@ describe("supportedChains", () => {
     expect(currency).toBe("FREE");
     expect(explorerUrl).toBe("https://stability-testnet.blockscout.com/");
   });
+  it("should stability chain info correctly", () => {
+    const { id, name, type, currency, explorerUrl } = SUPPORTED_CHAINS[CHAIN_ID.stability];
+
+    expect(id).toBe(CHAIN_ID.stability);
+    expect(name).toBe("stability");
+    expect(type).toBe("production");
+    expect(currency).toBe("FREE");
+    expect(explorerUrl).toBe("https://stability.blockscout.com/");
+  });
 });
