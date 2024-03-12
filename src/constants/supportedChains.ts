@@ -95,8 +95,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     currency: "MATIC",
     iconImage: iconPolygon,
     explorerUrl: "https://www.oklink.com/amoy",
-    explorerApiUrl: `https://www.oklink.com/${process.env.OKLINK_API_KEY}`,
-    rpcUrl: `https://polygon-amoy.infura.io/v3/${process.env.INFURA_API_KEY}`,
+    rpcUrl: "https://rpc-amoy.polygon.technology/",
     nativeCurrency: {
       name: "MATIC",
       symbol: "aMATIC",
