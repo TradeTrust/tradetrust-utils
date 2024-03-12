@@ -41,6 +41,17 @@ describe("supportedChains", () => {
     expect(explorerUrl).toBe("https://mumbai.polygonscan.com");
   });
 
+  it("should get polygon amoy chain info correctly", () => {
+    const { id, name, type, currency, explorerUrl, rpcUrl } = SUPPORTED_CHAINS[CHAIN_ID.amoy];
+
+    expect(id).toBe(CHAIN_ID.amoy);
+    expect(name).toBe("amoy");
+    expect(type).toBe("test");
+    expect(currency).toBe("MATIC");
+    expect(explorerUrl).toBe("https://www.oklink.com/amoy");
+    expect(rpcUrl).toContain("https://polygon-amoy.infura.io/v3/");
+  });
+
   it("should sepolia chain info correctly", () => {
     const { id, name, type, currency, explorerUrl } = SUPPORTED_CHAINS[CHAIN_ID.sepolia];
 

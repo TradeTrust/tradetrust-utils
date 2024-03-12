@@ -3,6 +3,7 @@ export const networks = [
   "mainnet",
   "matic",
   "maticmum",
+  "amoy",
   "sepolia",
   "xdc",
   "xdcapothem",

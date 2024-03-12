@@ -1,11 +1,15 @@
 import { networkName, networkType, networkCurrency } from "./network";
 import { iconEthereum, iconHedera, iconPolygon, iconStability, iconXDC } from "../static/icons";
+import "dotenv/config";
+
+const { OKLINK_API_KEY, INFURA_API_KEY } = process.env;
 
 export enum CHAIN_ID {
   local = "1337",
   mainnet = "1",
   matic = "137",
   maticmum = "80001",
+  amoy = "80002",
   sepolia = "11155111",
   xdc = "50",
   xdcapothem = "51",
@@ -82,6 +86,22 @@ export const SUPPORTED_CHAINS: supportedChains = {
     nativeCurrency: {
       name: "MATIC",
       symbol: "mMATIC",
+      decimals: 18,
+    },
+  },
+  [CHAIN_ID.amoy]: {
+    id: CHAIN_ID.amoy,
+    label: "Polygon Amoy",
+    name: "amoy",
+    type: "test",
+    currency: "MATIC",
+    iconImage: iconPolygon,
+    explorerUrl: "https://www.oklink.com/amoy",
+    explorerApiUrl: `https://www.oklink.com/${OKLINK_API_KEY}`,
+    rpcUrl: `https://polygon-amoy.infura.io/v3/${INFURA_API_KEY}`,
+    nativeCurrency: {
+      name: "MATIC",
+      symbol: "aMATIC",
       decimals: 18,
     },
   },
