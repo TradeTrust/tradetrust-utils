@@ -110,7 +110,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     currency: "XDC",
     iconImage: iconXDC,
     explorerUrl: "https://xdcscan.io",
-    rpcUrl: "https://rpc.ankr.com/xdc",
+    rpcUrl: "https://tradetrustrpc.xdcrpc.com",
     nativeCurrency: {
       name: "XDC",
       symbol: "XDC",
@@ -125,7 +125,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     currency: "XDC",
     iconImage: iconXDC,
     explorerUrl: "https://apothem.xdcscan.io",
-    rpcUrl: "https://rpc.ankr.com/xdc_testnet",
+    rpcUrl: "https://tradetrustarpc.xdcrpc.com",
     nativeCurrency: {
       name: "XDC",
       symbol: "XDC",
