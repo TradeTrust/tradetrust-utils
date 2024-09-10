@@ -45,7 +45,7 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "@tradetrust-tt/tt-verify": "^8.9.2"
+    "@tradetrust-tt/tt-verify": "^8.9.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.6.1",
