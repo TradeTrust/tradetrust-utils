@@ -96,4 +96,13 @@ describe("supportedChains", () => {
     expect(currency).toBe("FREE");
     expect(explorerUrl).toBe("https://stability.blockscout.com/");
   });
+  it("should astron chain info correctly", () => {
+    const { id, name, type, currency, explorerUrl } = SUPPORTED_CHAINS[CHAIN_ID.astron];
+
+    expect(id).toBe(CHAIN_ID.astron);
+    expect(name).toBe("astron");
+    expect(type).toBe("production");
+    expect(currency).toBe("ASTRON");
+    expect(explorerUrl).toBe("http://astronscanl2.bitfactory.cn/");
+  });
 });
