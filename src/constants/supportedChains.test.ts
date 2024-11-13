@@ -103,6 +103,6 @@ describe("supportedChains", () => {
     expect(name).toBe("astron");
     expect(type).toBe("production");
     expect(currency).toBe("ASTRON");
-    expect(explorerUrl).toBe("http://astronscanl2.bitfactory.cn/");
+    expect(explorerUrl).toBe("https://astronscanl2.bitfactory.cn/");
   });
 });
