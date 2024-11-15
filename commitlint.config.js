@@ -3,6 +3,6 @@ module.exports = {
 
   // Add your own rules. See http://marionebl.github.io/commitlint
   rules: {
-    "body-max-line-length": [0], // disable
+    // "body-max-line-length": [0], // disable
   },
 };
