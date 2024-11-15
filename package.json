@@ -77,6 +77,6 @@
     "url": "https://github.com/TradeTrust/tradetrust-utils.git"
   },
   "engines": {
-    "node": "18.x"
+    "node": ">=18.x"
   }
 }
