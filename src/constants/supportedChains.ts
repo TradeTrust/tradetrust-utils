@@ -186,7 +186,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     currency: "FREE",
     iconImage: iconStability,
     explorerUrl: "https://stability.blockscout.com/",
-    rpcUrl: `https://gtn.stabilityprotocol.com/?api_key=${process.env.STABILITY_API_KEY}`,
+    rpcUrl: `https://gtn.stabilityprotocol.com/zgt/${process.env.STABILITY_API_KEY}`,
     nativeCurrency: {
       name: "FREE",
       symbol: "FREE",
