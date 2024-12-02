@@ -2,6 +2,28 @@
   "name": "@tradetrust-tt/tradetrust-utils",
   "version": "0.1.0",
   "description": "",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/types/index.d.ts"
+      ],
+      "constants/network": [
+        "./dist/types/constants/network.d.ts"
+      ],
+      "constants/supportedChains": [
+        "./dist/types/constants/supportedChains.d.ts"
+      ],
+      "constants/VerificationErrorMessage": [
+        "./dist/types/constants/VerificationErrorMessage.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "require": "./dist/cjs/index.js",
@@ -24,12 +46,6 @@
       "types": "./dist/types/constants/VerificationErrorMessage.d.ts"
     }
   },
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/types/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "build": "npm run clean && npm run build:cjs && npm run build:esm && npm run build:types",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs --project ./tsconfig.prod.json",
@@ -69,7 +85,7 @@
     "prettier": "^3.2.5",
     "semantic-release": "^21.1.2",
     "ts-jest": "^29.1.2",
-    "typescript": "^5.3.3",
+    "typescript": "^5.7.2",
     "uuid": "^11.0.3"
   },
   "publishConfig": {
