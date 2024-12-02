@@ -2,29 +2,31 @@
   "name": "@tradetrust-tt/tradetrust-utils",
   "version": "0.1.0",
   "description": "",
-  "types": "./dist/types/index.d.ts",
-  "typesVersions": {
-    "*": {
-      ".": [
-        "./dist/types/index.d.ts"
-      ],
-      "constants/*": [
-        "./dist/types/constants/*.d.ts"
-      ]
-    }
-  },
   "exports": {
     ".": {
       "require": "./dist/cjs/index.js",
-      "import": "./dist/esm/index.js"
+      "import": "./dist/esm/index.js",
+      "types": "./dist/types/index.d.ts"
     },
-    "./constants/*": {
-      "require": "./dist/cjs/constants/*.js",
-      "import": "./dist/esm/constants/*.js"
+    "./constants/network": {
+      "require": "./dist/cjs/constants/network.js",
+      "import": "./dist/esm/constants/network.js",
+      "types": "./dist/types/constants/network.d.ts"
+    },
+    "./constants/supportedChains": {
+      "require": "./dist/cjs/constants/supportedChains.js",
+      "import": "./dist/esm/constants/supportedChains.js",
+      "types": "./dist/types/constants/supportedChains.d.ts"
+    },
+    "./constants/VerificationErrorMessage": {
+      "require": "./dist/cjs/constants/VerificationErrorMessage.js",
+      "import": "./dist/esm/constants/VerificationErrorMessage.js",
+      "types": "./dist/types/constants/VerificationErrorMessage.d.ts"
     }
   },
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
   "files": [
     "dist"
   ],
