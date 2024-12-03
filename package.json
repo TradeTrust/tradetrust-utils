@@ -63,7 +63,7 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "@tradetrust-tt/tt-verify": "^9.1.0"
+    "@tradetrust-tt/tt-verify": "^9.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.6.1",
