@@ -139,7 +139,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     currency: "FREE",
     iconImage: iconStability,
     explorerUrl: "https://stability-testnet.blockscout.com/",
-    rpcUrl: "https://free.testnet.stabilityprotocol.com",
+    rpcUrl: `https://rpc.testnet.stabilityprotocol.com/zgt/${process.env.STABILITY_TESTNET_API_KEY}`,
     nativeCurrency: {
       name: "FREE",
       symbol: "FREE",
@@ -154,7 +154,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     currency: "FREE",
     iconImage: iconStability,
     explorerUrl: "https://stability.blockscout.com/",
-    rpcUrl: `https://gtn.stabilityprotocol.com/zgt/${process.env.STABILITY_API_KEY}`,
+    rpcUrl: `https://rpc.stabilityprotocol.com/zgt/${process.env.STABILITY_API_KEY}`,
     nativeCurrency: {
       name: "FREE",
       symbol: "FREE",
