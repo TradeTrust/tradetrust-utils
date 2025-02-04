@@ -1,6 +1,7 @@
-import { networkName, networkType, networkCurrency } from "./network";
-import { iconEthereum, iconPolygon, iconStability, iconXDC, iconAstron } from "../static/icons";
 import "dotenv/config";
+import { gasStation, GasStationFeeData } from "../gasStation";
+import { iconAstron, iconEthereum, iconPolygon, iconStability, iconXDC } from "../static/icons";
+import { networkCurrency, networkName, networkType } from "./network";
 
 export enum CHAIN_ID {
   local = "1337",
@@ -25,6 +26,7 @@ export type chainInfo = {
   explorerUrl: string;
   explorerApiUrl?: string;
   rpcUrl?: string;
+  gasStation?: () => Promise<GasStationFeeData | undefined>;
   nativeCurrency?: {
     name: string;
     symbol: string;
@@ -64,6 +66,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     iconImage: iconPolygon,
     explorerUrl: "https://polygonscan.com",
     rpcUrl: "https://polygon-rpc.com",
+    gasStation: gasStation("https://gasstation.polygon.technology/v2"),
     nativeCurrency: {
       name: "MATIC",
       symbol: "MATIC",
@@ -80,6 +83,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     explorerUrl: "https://www.oklink.com/amoy",
     explorerApiUrl: `https://www.oklink.com/${process.env.OKLINK_API_KEY}`,
     rpcUrl: `https://polygon-amoy.infura.io/v3/${process.env.INFURA_API_KEY}`,
+    gasStation: gasStation("https://gasstation-testnet.polygon.technology/amoy"),
     nativeCurrency: {
       name: "MATIC",
       symbol: "aMATIC",
@@ -140,6 +144,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     iconImage: iconStability,
     explorerUrl: "https://stability-testnet.blockscout.com/",
     rpcUrl: `https://rpc.testnet.stabilityprotocol.com/zgt/${process.env.STABILITY_TESTNET_API_KEY}`,
+    gasStation: gasStation("https://rpc.testnet.stabilityprotocol.com/gas-station"),
     nativeCurrency: {
       name: "FREE",
       symbol: "FREE",
@@ -155,6 +160,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     iconImage: iconStability,
     explorerUrl: "https://stability.blockscout.com/",
     rpcUrl: `https://rpc.stabilityprotocol.com/zgt/${process.env.STABILITY_API_KEY}`,
+    gasStation: gasStation("https://rpc.stabilityprotocol.com/gas-station"),
     nativeCurrency: {
       name: "FREE",
       symbol: "FREE",
@@ -170,6 +176,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     iconImage: iconAstron,
     explorerUrl: "https://astronscanl2.bitfactory.cn/",
     rpcUrl: `https://astronlayer2.bitfactory.cn/rpc/`,
+    gasStation: gasStation("https://astronscanl2.bitfactory.cn/gas-station"),
     nativeCurrency: {
       name: "ASTRON",
       symbol: "ASTRON",
