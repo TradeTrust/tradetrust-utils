@@ -63,9 +63,9 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "@tradetrust-tt/tt-verify": "^9.3.0",
+    "@tradetrust-tt/tt-verify": "^9.3.1",
     "dotenv": "^16.4.5",
-    "ethers": "^5.7.2",
+    "ethers": "^5.8.0",
     "node-fetch": "^2.7.0"
   },
   "devDependencies": {
