@@ -11,6 +11,7 @@ export const TYPES = {
   SERVER_ERROR: "SERVER_ERROR",
   ETHERS_UNHANDLED_ERROR: "ETHERS_UNHANDLED_ERROR",
   CLIENT_NETWORK_ERROR: "CLIENT_NETWORK_ERROR",
+  VERIFICATION_ERROR: "VERIFICATION_ERROR",
 };
 
 export const MESSAGES = {
@@ -65,10 +66,10 @@ export const MESSAGES = {
       "Please inform the issuer of this document that the merkle root is invalid, or it may have been tampered with.",
   },
   [TYPES.SERVER_ERROR]: {
-    failureTitle: "Unable to connect to the Ethereum network",
+    failureTitle: "Unable to connect to the blockchain network",
     successTitle: "",
     failureMessage:
-      "We are unable to connect to the Ethereum network, please try again later. If this issue persists, contact us using the feedback link below.",
+      "We are unable to connect to the blockchain network, please try again later. If this issue persists, contact us using the feedback link below.",
   },
   [TYPES.ETHERS_UNHANDLED_ERROR]: {
     failureTitle: "Whoops! It's not you, it's us",
@@ -80,5 +81,10 @@ export const MESSAGES = {
     failureTitle: "Whoops! There seems to be an error verifying the document",
     successTitle: "",
     failureMessage: "Please check your network and try again",
+  },
+  [TYPES.VERIFICATION_ERROR]: {
+    failureTitle: "Document Verification Failed",
+    successTitle: "",
+    failureMessage: "The document could not be verified at the moment. Please try again.",
   },
 };
