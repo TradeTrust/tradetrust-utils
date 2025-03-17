@@ -6,6 +6,8 @@ export const TYPES = {
   INVALID: "INVALID",
   ADDRESS_INVALID: "ADDRESS_INVALID",
   NETWORK_INVALID: "NETWORK_INVALID",
+  NETWORK_MISMATCH_MAINNET: "NETWORK_MISMATCH_MAINNET",
+  NETWORK_MISMATCH_TESTNET: "NETWORK_MISMATCH_TESTNET",
   CONTRACT_NOT_FOUND: "CONTRACT_NOT_FOUND",
   INVALID_ARGUMENT: "INVALID_ARGUMENT",
   SERVER_ERROR: "SERVER_ERROR",
@@ -52,6 +54,18 @@ export const MESSAGES = {
     successTitle: "",
     failureMessage:
       "This document has an invalid network field. Please contact your issuing authority for help or re-issue the document with a valid network field before trying again.",
+  },
+  [TYPES.NETWORK_MISMATCH_MAINNET]: {
+    failureTitle: "Document network mismatch on mainnet",
+    successTitle: "",
+    failureMessage:
+      "This document was issued on the testnet, but you are currently using the mainnet environment. Please switch to the testnet environment to view this document correctly, or contact the issuing authority if you believe this is incorrect.",
+  },
+  [TYPES.NETWORK_MISMATCH_TESTNET]: {
+    failureTitle: "Document network mismatch on testnet",
+    successTitle: "",
+    failureMessage:
+      "This document was issued on the mainnet, but you are currently using the testnet environment. Please switch to the mainnet environment to view this document correctly, or contact the issuing authority if you believe this is incorrect.",
   },
   [TYPES.CONTRACT_NOT_FOUND]: {
     failureTitle: "Document store or Token registry address cannot be found",
