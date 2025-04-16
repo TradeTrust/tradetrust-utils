@@ -10,6 +10,7 @@ export const networks = [
   "stabilitytestnet",
   "stability",
   "astron",
+  "astrontestnet",
 ] as const;
 
 export type networkName = (typeof networks)[number];
