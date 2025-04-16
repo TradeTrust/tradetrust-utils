@@ -14,6 +14,7 @@ export enum CHAIN_ID {
   stabilitytestnet = "20180427",
   stability = "101010",
   astron = "1338",
+  astrontestnet = "21002",
 }
 
 export type chainInfo = {
@@ -180,6 +181,22 @@ export const SUPPORTED_CHAINS: supportedChains = {
     nativeCurrency: {
       name: "ASTRON",
       symbol: "ASTRON",
+      decimals: 18,
+    },
+  },
+  [CHAIN_ID.astrontestnet]: {
+    id: CHAIN_ID.astrontestnet,
+    label: "Astron Testnet Network",
+    name: "astrontestnet",
+    type: "test",
+    currency: "ASTRON",
+    iconImage: iconAstron,
+    explorerUrl: "https://dev-astronscanl2.bitfactory.cn/",
+    rpcUrl: `https://dev-astronlayer2.bitfactory.cn/query/`,
+    gasStation: gasStation("https://dev-astronscanl2.bitfactory.cn/gas-station"),
+    nativeCurrency: {
+      name: "ASTRONTEST",
+      symbol: "ASTRONTEST",
       decimals: 18,
     },
   },

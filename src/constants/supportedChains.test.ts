@@ -96,4 +96,13 @@ describe("supportedChains", () => {
     expect(currency).toBe("ASTRON");
     expect(explorerUrl).toBe("https://astronscanl2.bitfactory.cn/");
   });
+  it("should astrontestnet chain info correctly", () => {
+    const { id, name, type, currency, explorerUrl } = SUPPORTED_CHAINS[CHAIN_ID.astrontestnet];
+
+    expect(id).toBe(CHAIN_ID.astrontestnet);
+    expect(name).toBe("astrontestnet");
+    expect(type).toBe("test");
+    expect(currency).toBe("ASTRON");
+    expect(explorerUrl).toBe("https://dev-astronscanl2.bitfactory.cn/");
+  });
 });
