@@ -56,7 +56,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     currency: "ETH",
     iconImage: iconEthereum,
     explorerUrl: "https://etherscan.io",
-    explorerApiUrl: "https://api.etherscan.io",
+    rpcUrl: `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
   },
   [CHAIN_ID.matic]: {
     id: CHAIN_ID.matic,
@@ -66,7 +66,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     currency: "MATIC",
     iconImage: iconPolygon,
     explorerUrl: "https://polygonscan.com",
-    rpcUrl: "https://polygon-rpc.com",
+    rpcUrl: `https://polygon-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
     gasStation: gasStation("https://gasstation.polygon.technology/v2"),
     nativeCurrency: {
       name: "MATIC",
@@ -99,7 +99,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     currency: "ETH",
     iconImage: iconEthereum,
     explorerUrl: "https://sepolia.etherscan.io",
-    rpcUrl: "https://rpc.sepolia.org",
+    rpcUrl: `https://sepolia.infura.io/v3/${process.env.INFURA_API_KEY}`,
     nativeCurrency: {
       name: "ETH",
       symbol: "sepETH",
