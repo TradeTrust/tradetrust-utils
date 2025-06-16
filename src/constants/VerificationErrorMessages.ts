@@ -1,5 +1,6 @@
 export const TYPES = {
   REVOKED: "REVOKED",
+  SUSPENDED: "SUSPENDED",
   ISSUED: "ISSUED",
   HASH: "HASH",
   IDENTITY: "IDENTITY",
@@ -21,6 +22,11 @@ export const MESSAGES = {
     failureTitle: "Document revoked",
     successTitle: "Document has not been revoked",
     failureMessage: "This document has been revoked by the issuing authority. Please contact them for more details.",
+  },
+  [TYPES.SUSPENDED]: {
+    failureTitle: "Document suspended",
+    successTitle: "Document has not been suspended",
+    failureMessage: "This document has been suspended by the issuing authority. Please contact them for more details.",
   },
   [TYPES.ISSUED]: {
     failureTitle: "Document not issued",
