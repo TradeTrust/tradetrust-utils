@@ -176,7 +176,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     currency: "ASTRON",
     iconImage: iconAstron,
     explorerUrl: "https://astronscanl2.bitfactory.cn/",
-    rpcUrl: `https://astronlayer2.bitfactory.cn/rpc/`,
+    rpcUrl: `https://astronlayer2.bitfactory.cn/query/`,
     gasStation: gasStation("https://astronscanl2.bitfactory.cn/gas-station"),
     nativeCurrency: {
       name: "ASTRON",
