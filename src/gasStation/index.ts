@@ -11,7 +11,7 @@ export const gasStation: GasStationFunction =
   (gasStationUrl: string) => async (): Promise<GasStationFeeData | undefined> => {
     try {
       if (!gasStationUrl) return undefined;
-      const res = await fetch(gasStationUrl);
+      const res = await fetch(gasStationUrl, { redirect: "follow" });
       const data = await res.json();
       return {
         maxPriorityFeePerGas: safeParseUnits((data as any).standard.maxPriorityFee.toString(), 9),
