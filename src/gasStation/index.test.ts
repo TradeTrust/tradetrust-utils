@@ -32,7 +32,7 @@ describe("gasStation", () => {
     const getGasPrice = gasStation("https://gasstation.example.com");
     const result = await getGasPrice();
 
-    expect(mockedFetch).toHaveBeenCalledWith("https://gasstation.example.com");
+    expect(mockedFetch).toHaveBeenCalledWith("https://gasstation.example.com", { redirect: "follow" });
     expect(result).toBeDefined();
     expect(result?.maxPriorityFeePerGas).toEqual(BigNumber.from("2500000000"));
     expect(result?.maxFeePerGas).toEqual(BigNumber.from("25500000000"));
@@ -52,7 +52,7 @@ describe("gasStation", () => {
     const getGasPrice = gasStation("https://gasstation.example.com");
     const result = await getGasPrice();
 
-    expect(mockedFetch).toHaveBeenCalledWith("https://gasstation.example.com");
+    expect(mockedFetch).toHaveBeenCalledWith("https://gasstation.example.com", { redirect: "follow" });
     expect(result).toBeDefined();
     expect(result?.maxPriorityFeePerGas).toEqual(BigNumber.from("0"));
     expect(result?.maxFeePerGas).toEqual(BigNumber.from("0"));

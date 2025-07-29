@@ -177,7 +177,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     iconImage: iconAstron,
     explorerUrl: "https://astronscanl2.bitfactory.cn/",
     rpcUrl: `https://astronlayer2.bitfactory.cn/query/`,
-    gasStation: gasStation("https://astronscanl2.bitfactory.cn/gas-station"),
+    // gasStation: gasStation("https://astronscanl2.bitfactory.cn/gas-station"),
     nativeCurrency: {
       name: "ASTRON",
       symbol: "ASTRON",
@@ -193,7 +193,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     iconImage: iconAstron,
     explorerUrl: "https://dev-astronscanl2.bitfactory.cn/",
     rpcUrl: `https://dev-astronlayer2.bitfactory.cn/query/`,
-    gasStation: gasStation("https://dev-astronscanl2.bitfactory.cn/gas-station"),
+    // gasStation: gasStation("https://dev-astronscanl2.bitfactory.cn/gas-station"),
     nativeCurrency: {
       name: "ASTRONTEST",
       symbol: "ASTRONTEST",
