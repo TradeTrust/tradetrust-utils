@@ -129,7 +129,7 @@ export const SUPPORTED_CHAINS: supportedChains = {
     currency: "XDC",
     iconImage: iconXDC,
     explorerUrl: "https://apothem.xdcscan.io",
-    rpcUrl: "https://rpc.ankr.com/xdc_testnet",
+    rpcUrl: "https://rpc.apothem.network",
     nativeCurrency: {
       name: "XDC",
       symbol: "XDC",
