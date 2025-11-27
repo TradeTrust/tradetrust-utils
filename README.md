@@ -1,3 +1,11 @@
+# DEPRECATED 🚨
+
+[![Unmaintained](https://img.shields.io/badge/status-unmaintained-red)](https://shields.io/)
+
+> This repository has been archived and is now in a read-only state. No further updates or maintenance will be provided.
+> All relevant content and active development have been transferred to TrustVC.
+> New canonical repository: [https://github.com/trustvc/](https://github.com/trustvc/trustvc)
+
 # tradetrust-utils
 
 This is a repository that houses shared project logic between tradetrust website and tradetrust document creator.
