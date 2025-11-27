@@ -2,9 +2,15 @@
 
 [![Unmaintained](https://img.shields.io/badge/status-unmaintained-red)](https://shields.io/)
 
-> This repository has been archived and is now in a read-only state. No further updates or maintenance will be provided.
-> All relevant content and active development have been transferred to TrustVC.
-> New canonical repository: [https://github.com/trustvc/](https://github.com/trustvc/trustvc)
+> This repository has been archived and is now in a read-only state.
+> No further updates or maintenance will be provided here.
+>
+> All relevant content and active development have been transferred to **TrustVC**.
+>
+> Please visit the canonical repository for the latest changes and contributions:
+> [https://github.com/trustvc/trustvc](https://github.com/trustvc/trustvc)
+>
+> Thank you for your interest and support.
 
 # tradetrust-utils
 
